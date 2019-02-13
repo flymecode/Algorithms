@@ -17,7 +17,16 @@ public class SortUntils {
 	public static <T extends Comparable<T>> boolean swap(T[] arr, int left, int right) {
 		T temp = arr[left];
 		arr[left] = arr[right];
-		arr[right] = arr[left];
+		arr[right] = temp;
 		return true;
+	}
+
+	/**
+	 * Helper method for compare tow elements
+	 * @param t
+	 * @param pivot
+	 */
+	public static <T extends Comparable<T>> boolean less(T t, T pivot) {
+		return t.compareTo(pivot) < 0;
 	}
 }
