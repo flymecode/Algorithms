@@ -1,8 +1,3 @@
-/**
- * @author: maxu1
- * @date: 2019/2/13 20:02
- */
-
 import java.util.Arrays;
 
 /**
