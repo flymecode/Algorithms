@@ -3,6 +3,8 @@
  * @date: 2019/2/13 19:41
  */
 
+import java.util.Arrays;
+
 /**
  * @author maxu
  */
@@ -28,5 +30,12 @@ public class SortUntils {
 	 */
 	public static <T extends Comparable<T>> boolean less(T t, T pivot) {
 		return t.compareTo(pivot) < 0;
+	}
+
+	/**
+	 * Prints an array
+	 */
+	public static  void print(Object[] arr) {
+		System.out.println(Arrays.toString(arr));
 	}
 }

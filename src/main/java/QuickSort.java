@@ -45,7 +45,7 @@ public class QuickSort implements SortAlgorithm {
 	}
 
 	public static void main(String[] args) {
-		Integer[] arr = {4, 23, 6, 78, 1, 54, 231, 9, 12};
+		Integer[] arr = {3,6,2,1,5,8,4,7};
 		QuickSort quickSort = new QuickSort();
 		Integer[] sort = quickSort.sort(arr);
 		System.out.println(Arrays.toString(sort));
