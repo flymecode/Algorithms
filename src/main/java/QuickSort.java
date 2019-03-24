@@ -20,7 +20,7 @@ public class QuickSort implements SortAlgorithm {
 	}
 
 	private <T extends Comparable<T>> int partition(T[] unsorted, int left, int right) {
-		int mid = (left - right) / 2 + right;
+		int mid = (left + right) / 2;
 		T pivot = unsorted[mid];
 
 		while (left <= right) {
