@@ -1,9 +1,8 @@
-package com.xupt.sort; /**
- * @author: maxu1
- * @date: 2019/2/14 10:22
- */
+package com.xupt.sort;
+
 
 /**
+ * 插入排序
  * @author maxu
  */
 public class InsertionSort implements SortAlgorithm {
