@@ -14,17 +14,32 @@ public class QuickSort implements SortAlgorithm {
 	}
 
 	private <T extends Comparable<T>> void doSort(T[] unsorted, int left, int right) {
-		if (left < right) {
+		// 采用尾递归进行优化操作,减少栈空间
+		while(left < right) {
 			int pivot = partition(unsorted, left, right);
 			doSort(unsorted, left, pivot - 1);
-			doSort(unsorted, pivot, right);
+			// doSort(unsorted, pivot, right);
+			left = pivot;
 		}
 	}
 
 	private <T extends Comparable<T>> int partition(T[] unsorted, int left, int right) {
-		int mid = (left + right) / 2;
+		int mid = left + (right - left) / 2;
+
+		// 三数取中
+		if (SortUntils.less(unsorted[right], unsorted[left])) {
+			SortUntils.swap(unsorted, left, right);
+		}
+		if (SortUntils.less(unsorted[mid], unsorted[left])) {
+			SortUntils.swap(unsorted, mid, left);
+		}
+		if (SortUntils.less(unsorted[right], unsorted[mid])) {
+			SortUntils.swap(unsorted, right, mid);
+		}
 		T pivot = unsorted[mid];
 
+
+		// TODO 三指针
 		while (left <= right) {
 			while (SortUntils.less(unsorted[left], pivot)) {
 				left++;
