@@ -1,6 +1,7 @@
 package com.xupt.sort;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * @author maxu
@@ -24,13 +25,13 @@ public class MergeSort implements SortAlgorithm{
 
 	}
 
+
 	private static <T extends Comparable<T>> void merge(T[] arr, T[] temp, int left, int mid, int right) {
 		System.arraycopy(arr, left, temp, left, right - left + 1);
 
 		int i = left;
 		int j = mid + 1;
 		int k = left;
-
 
 		while (i <= mid && j <= right) {
 			if (temp[i].compareTo(temp[j]) <= 0) {

@@ -28,20 +28,11 @@ public class Bubble implements SortAlgorithm {
 		return arr;
 	}
 
-	public void sort(int[] arr) {
-		for (int i = 0; i < arr.length; i++) {
-
-			for (int j = 0; j < arr.length - i - 1; j++) {
-
-			}
-		}
-	}
-
 	public static void main(String[] args) {
 		Bubble bubble = new Bubble();
 		Integer[] arr = {1, 3, 4,5,6,7,8};
 		String[] strings = {"c", "a", "e", "b","d"};
-		Integer[] sort1 = bubble.sort(arr);
+ 		Integer[] sort1 = bubble.sort(arr);
 		String[] sort = bubble.sort(strings);
 		SortUntils.print(sort);
 		SortUntils.print(sort1);
