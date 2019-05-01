@@ -1,7 +1,6 @@
 package com.xupt.sort;
 
 import java.util.Arrays;
-import java.util.HashMap;
 
 /**
  * @author maxu
@@ -13,6 +12,29 @@ public class MergeSort implements SortAlgorithm{
 		T[] temp = (T[]) new Comparable[unsorted.length];
 		doSort(unsorted, temp, 0, unsorted.length - 1);
 		return unsorted;
+	}
+	static int string2int(String str) {
+		if(str == null ||str.length() == 0) {
+			return 0;
+		}
+		int num = 0;
+		int n = 0;
+		for(int i = str.length()-1;i>=0;i--){
+			char c = str.charAt(i);
+			if((c - '0') > 9) {
+				return 0;
+			}
+			if(c == '+') {
+				return num;
+			}
+			if( c == '-') {
+				return -num;
+			}
+			num = num + (c-'0') * (int) Math.pow(10,n);
+			n++;
+		}
+		return num;
+
 	}
 
 	private static <T extends Comparable<T>> void doSort(T[] arr, T[] temp, int left, int right) {
