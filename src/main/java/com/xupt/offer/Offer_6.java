@@ -19,5 +19,4 @@ public class Offer_6 {
             System.out.println(root.value);
         }
     }
-
 }
