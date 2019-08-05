@@ -5,11 +5,11 @@ package com.xupt.leetcode;
  * @date 2019/5/1
  */
 public class TreeNode {
-    int val;
-    com.xupt.leetcode.TreeNode left;
-    com.xupt.leetcode.TreeNode right;
+    public int val;
+    public com.xupt.leetcode.TreeNode left;
+    public com.xupt.leetcode.TreeNode right;
 
-    TreeNode(int x) {
+    public TreeNode(int x) {
         val = x;
     }
 
