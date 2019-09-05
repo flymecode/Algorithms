@@ -10,29 +10,19 @@ public class FindPath {
 
     private ArrayList<ArrayList<Integer>> res = new ArrayList<>();
     private ArrayList<Integer> list = new ArrayList<>();
-    private int sum = 0;
-    private int target;
-    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-        this.target =  target;
-        backTrack(root,sum);
-        return res;
-    }
 
-    private void backTrack(TreeNode root,int sum) {
-        if (sum == target && root == null) {
-            res.add(list);
-            list = new ArrayList<>();
-        } else {
-            for (int i = 0; i <= 1; i++) {
-                if (sum + root.val < target && i == 0) {
-                    list.add(root.val);
-                    backTrack(root.left,sum + root.val);
-                } else if (sum + root.val < target && i == 1){
-                    list.add(root.val);
-                    backTrack(root.right,sum + root.val);
-                }
-                list.remove(list.size() - 1);
-            }
+    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
+        if (root == null) {
+            return res;
         }
+        list.add(root.val);
+        target -= root.val;
+        if (target == 0 && root.left == null && root.right == null){
+            res.add(new ArrayList<Integer>(list));
+        }
+        FindPath(root.left, target);
+        FindPath(root.right, target);
+        list.remove(list.size() - 1);
+        return res;
     }
 }
